@@ -1,0 +1,3 @@
+= AWS Credentials Support
+
+This is the first version of a "plugin" that provides helper classes to manage multiple aws credential sets
