@@ -11,6 +11,7 @@ action "Only Master" {
 action "build-publish" {
   uses = "./actions/build"
   needs = ["Only Master"]
+  secrets = ["GRADLE_PLUGIN_PORTAL_KEY", "GRADLE_PLUGIN_PORTAL_SECRET"]
 }
 
 workflow "Automated Review" {
