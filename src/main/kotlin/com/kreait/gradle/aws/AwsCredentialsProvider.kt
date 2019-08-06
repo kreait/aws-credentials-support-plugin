@@ -5,7 +5,6 @@ import com.amazonaws.auth.BasicSessionCredentials
 import com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper
 import com.amazonaws.auth.SystemPropertiesCredentialsProvider
 import com.amazonaws.auth.profile.ProfileCredentialsProvider
-import sun.security.krb5.Credentials
 
 object AwsCredentialsProvider {
 
