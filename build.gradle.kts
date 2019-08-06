@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.kreait.gradle"
-version = "0.0.2-SNAPSHOT"
+version = "0.0.3-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
@@ -74,6 +74,18 @@ publishing {
             groupId = rootProject.group as? String
             artifactId = rootProject.name
             version = rootProject.version as? String
+
+            pom {
+                licenses {
+                    license {
+                        name.set("MIT License")
+                        url.set("http://www.opensource.org/licenses/mit-license.php")
+                    }
+                }
+                scm {
+                    url.set("https://github.com/kreait/aws-credentials-support-plugin")
+                }
+            }
         }
     }
 }

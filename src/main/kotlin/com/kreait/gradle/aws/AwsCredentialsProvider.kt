@@ -13,8 +13,7 @@ object AwsCredentialsProvider {
     }
 
     /**
-     * Simplifies the credentials fetching
-     *
+     * Fetch credentials based on given profile
      * @return [Credentials]
      */
     fun credentials(profile: String?): AwsCredentials {
