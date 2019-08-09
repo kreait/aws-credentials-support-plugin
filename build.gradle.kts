@@ -8,7 +8,8 @@ plugins {
 }
 
 group = "com.kreait.gradle"
-version = "0.0.3-SNAPSHOT"
+version = "0.1.0.RELEASE"
+
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
@@ -33,7 +34,7 @@ gradlePlugin {
 }
 
 pluginBundle {
-    website = "http://kreait.com"
+    website = "https://github.com/kreait/aws-credentials-support-plugin"
     vcsUrl = "https://github.com/kreait/aws-credentials-support-plugin.git"
     description = "Helps to develop locally and managing different aws credential sets"
     tags = listOf("maven", "aws", "s3", "repository", "credentials")

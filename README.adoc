@@ -1,0 +1,35 @@
+== AWS Credentials Support
+
+We build this "plugin" to support AWSCredentials resolution inside the gradle build script.
+
+=== Problem
+
+We have maven artifacts published to S3 which is not public.
+Additionally we have a second set of credentials for our "private" AWS Account which we use for exploration and configuration
+
+- For Local Development we use our own developer credentials
+- For Accessing AWS Services we use a second set of AWS Credentials
+- The CI environment uses its EC2 Meta Data Role Credentials
+
+To manage this we have build a very simple class abstraction that is able to take the profile name of your AWS credentials
+
+```
+maven {
+        Credentials credentials = AwsCredentialsSupport.credentials("profilename")
+        url "s3://artifactory/release"
+        credentials(AwsCredentials) {
+            accessKey credentials.accessKeyId()
+            secretKey credentials.secretKey()
+            sessionToken credentials.sessionToken()
+        }
+    }
+```
+
+=== Why a Plugin?
+
+Well you may ask why we want a plugin for this.
+At the time we are maintaining about 15 Repositories that each have a ```buildSrc``` folder with the code that is in this plugin.
+This became a nuisance and we did not want to copy paste the buildSrc into each new project.
+Additionally the build is a bit slower when having a buildSrc folder.
+
+Feel free to contribute to this if you need more features e.g. multi profile or CredentialProviderChain order definition.
