@@ -10,7 +10,7 @@ plugins {
 group = "com.kreait.gradle"
 version = "0.1.0.RELEASE"
 
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
