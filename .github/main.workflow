@@ -9,7 +9,7 @@ action "Only Master" {
 }
 
 action "build-publish" {
-  uses = "./actions/build"
+  uses = "./actions/build-publish"
   needs = ["Only Master"]
   secrets = ["GRADLE_PLUGIN_PORTAL_KEY", "GRADLE_PLUGIN_PORTAL_SECRET"]
 }
